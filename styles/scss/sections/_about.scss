@@ -1,0 +1,63 @@
+.about {
+  text-align: center;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__heading {
+    @include heading;
+    @include dark;
+  }
+
+  &__title {
+    color: $dark-2;
+    font-weight: 400;
+    font-size: 2.4rem;
+  }
+
+  &__info-container {
+    display: flex;
+    gap: 5rem;
+    // @media only screen and (max-width: $lg) {
+    //   flex-direction: column;
+    //   gap: 2rem;
+    // }
+  }
+
+  &__info {
+    font-size: 1.6rem;
+    color: $dark-2;
+    font-weight: 400;
+    text-align: left;
+    flex-basis: 50%;
+
+    // @media only screen and (max-width: $lg) {
+    //   flex-basis: 100%;
+    // }
+  }
+
+  &__btn {
+    background-color: $primary;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 2px;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 1.8rem;
+    align-self: center;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+      transform: rotateZ(5deg);
+      transform-origin: top left;
+    }
+  }
+}

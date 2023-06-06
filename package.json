@@ -1,0 +1,30 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "project for study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node-sass styles/scss/main.scss styles/css/main.css -w",
+    "comp": "node-sass styles/scss -o styles/css",
+    "concat": "concat -o styles/css/main.concat.css styles/css/main.css",
+    "prefix": "postcss --use autoprefixer -b 'last 10 versions' styles/css/main.concat.css -o styles/css/main.prefix.css",
+    "compress": "node-sass styles/css/main.prefix.css styles/css/main.css --output-style compress",
+    "prod": "npm-run-all comp concat prefix compress"
+  },
+  "author": "Bobomurod Iskandarov",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.13",
+    "concat": "^1.0.3",
+    "cssnano": "^5.1.14",
+    "node-sass": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0"
+  }
+}

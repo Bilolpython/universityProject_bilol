@@ -1,0 +1,238 @@
+.header {
+  background-color: #111;
+  min-height: 100vh;
+  background-image: url(../../assets/img/header-bg.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.nav {
+  font-family: "Source sans pro", sans-serif;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  // border: 1px dashed #999;
+
+  &__brand {
+    justify-self: flex-start;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    cursor: default;
+    &:hover {
+      color: $primary;
+    }
+    order: 1;
+  }
+
+  &__list {
+    display: flex;
+    justify-self: center;
+    gap: 2rem;
+    transition: 0.5s;
+    list-style: none;
+
+    // @media only screen and (max-width: $med) {
+    //   flex-direction: column;
+    //   position: fixed;
+    //   top: 0;
+    //   right: 0;
+    //   height: 100%;
+    //   padding: 8rem 15rem;
+    //   background-color: rgba(56, 56, 56, 0.5);
+    //   backdrop-filter: blur(3rem);
+    //   gap: 5rem;
+    //   z-index: 5;
+    //   transform: translateX(100%);
+    //   order: 3;
+    // }
+    order: 2;
+  }
+
+  &__link {
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+
+    &:nth-child(2) {
+      border-bottom: 2px solid #fff;
+    }
+
+    &:hover {
+      color: $primary;
+      border-bottom: 2px solid $primary;
+    }
+
+    // @media only screen and (max-width: $med) {
+    //   font-size: 2rem;
+    //   padding: 3rem 0;
+    // }
+  }
+
+  &__toggle {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 52;
+    cursor: pointer;
+    // margin-top: 3rem;
+    // border: 1px dashed red;
+    background-color: transparent;
+    order: 3;
+    &-bar {
+      background-color: #fff;
+      width: 100%;
+      height: 5px;
+      border-radius: 2px;
+    }
+
+    .bar-1,
+    .bar-2,
+    .bar-3 {
+      transition: 0.5s;
+    }
+
+    // @media only screen and (min-width: $med) {
+    //   opacity: 0;
+    //   order: 2;
+    //   display: none;
+    // }
+  }
+
+  &__btn {
+    opacity: 0;
+    visibility: hidden;
+    order: 3;
+
+    // @media only screen and (max-width: $med) {
+    //   display: none;
+    // }
+  }
+
+  &__btn:checked ~ &__list {
+    transform: translateX(0);
+  }
+
+  &__btn:checked + &__toggle {
+    position: fixed;
+    top: 4rem;
+    right: 3rem;
+  }
+
+  &__btn:checked + &__toggle .bar-1 {
+    transform: translateX(-10px) rotateZ(135deg) translateY(-17px);
+  }
+  &__btn:checked + &__toggle .bar-2 {
+    opacity: 0;
+  }
+  &__btn:checked + &__toggle .bar-3 {
+    transform: translateX(-10px) rotateZ(-135deg) translateY(17px);
+  }
+}
+
+.title {
+  // border: 1px dotted red;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  align-self: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+
+  &__logo {
+    &-img {
+      height: 6.4rem;
+      width: 6.4rem;
+      border-radius: 50%;
+      -webkit-animation: coinFlip 1s linear infinite;
+      animation: coinFlip 1s linear infinite;
+    }
+    border-radius: 50%;
+  }
+
+  &__heading {
+    @include heading;
+    @include light;
+    line-height: 6.4rem;
+    max-width: 37rem;
+    margin-inline: auto;
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: $muted;
+  }
+  &__toggle {
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    visibility: hidden;
+
+    &-bar {
+      width: 100%;
+      height: 5px;
+      background-color: #fff;
+    }
+  }
+}
+
+@-webkit-keyframes coinFlip {
+  0% {
+    transform: scale(1) rotateY(0deg);
+  }
+
+  40% {
+    transform: scale(1.3) rotateY(180deg);
+  }
+  60% {
+    transform: scale(1.3) rotateY(180deg);
+  }
+  90% {
+    transform: scale(1) rotateY(0);
+  }
+  100% {
+    transform: scale(1) rotateY(0);
+    transform-style: preserve-3d;
+  }
+}
+
+@keyframes coinFlip {
+  0% {
+    transform: scale(1) rotateY(0deg);
+  }
+
+  40% {
+    transform: scale(1.3) rotateY(180deg);
+  }
+  60% {
+    transform: scale(1.3) rotateY(180deg);
+  }
+  90% {
+    transform: scale(1) rotateY(0);
+  }
+  100% {
+    transform: scale(1) rotateY(0);
+    transform-style: preserve-3d;
+  }
+}

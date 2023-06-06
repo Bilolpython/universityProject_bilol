@@ -1,0 +1,45 @@
+@mixin heading {
+  font-size: 4.8rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+}
+
+@mixin dark {
+  color: $dark;
+}
+
+@mixin light {
+  color: $white;
+}
+
+.heading-main {
+  font-size: 4.8rem;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: 2rem;
+  // @media only screen (max-width: $lg) {
+  // }
+
+  // @media only screen (max-width: $med) {
+  //   max-width: 60rem;
+  // }
+
+  @media screen and (max-width: $lg) {
+    max-width: 80rem;
+  }
+
+  @media screen and (max-width: $med) {
+    max-width: 100%;
+    padding-inline: 3rem;
+  }
+}
+
+.mini-container {
+  max-width: 120ch;
+  margin-inline: auto;
+}

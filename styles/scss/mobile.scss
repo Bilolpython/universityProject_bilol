@@ -1,0 +1,72 @@
+// MAX
+$med: 48em;
+$lg: 64em; // 1024px
+
+@media only screen and (max-width: $med) {
+  // HEADER
+  .nav {
+    &__btn {
+      display: none;
+    }
+
+    &__list {
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding: 8rem 15rem;
+      background-color: rgba(56, 56, 56, 0.5);
+      -webkit-backdrop-filter: blur(3rem);
+      backdrop-filter: blur(3rem);
+      gap: 5rem;
+      z-index: 5;
+      transform: translateX(100%);
+      order: 3;
+    }
+
+    &__link {
+      font-size: 2rem;
+      padding: 3rem 0;
+    }
+  }
+
+  // FOOTER
+  .footer {
+    &__container {
+      @media only screen and (max-width: $med) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+  }
+}
+
+// ABOUT SECTION
+@media only screen and (max-width: $lg) {
+  .about {
+    &__info-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__info {
+      flex-basis: 100%;
+    }
+  }
+}
+
+// MIN
+// HEADER
+@media only screen and (min-width: $med) {
+  .nav {
+    &__toggle {
+      opacity: 0;
+      order: 2;
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.footer {
+  background-color: $dark;
+
+  &__container {
+    padding-block: 3rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: repeat(auto-fill, 5rem);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    // border: 1px dashed red;
+    // @media only screen and (max-width: $med) {
+    //   display: flex;
+    //   flex-direction: column;
+    //   text-align: center;
+    //   align-items: center;
+    //   gap: 2rem;
+    // }
+  }
+
+  &__brand {
+    grid-column: 1 / span 1;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__logo {
+    &-img {
+      width: 2rem;
+      height: 2rem;
+      animation: spin 5s linear infinite;
+    }
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  &__info {
+    &-copyright {
+      grid-column: 4 / span 1;
+      grid-row: 2/3;
+      justify-self: end;
+
+      color: $dark-2;
+      font-size: 1.6rem;
+    }
+    &-mail {
+      grid-column: 2 / span 1;
+
+      color: $dark-2;
+      font-size: 1.6rem;
+    }
+    &-adress {
+      grid-column: 2 / span 1;
+
+      color: $dark-2;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

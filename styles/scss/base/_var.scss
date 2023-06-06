@@ -1,0 +1,32 @@
+// COLORS
+
+$muted: rgba(255, 255, 255, 0.7);
+$primary: #55c2d8;
+$dark: #464547;
+$dark-2: #666;
+$white: #ffffff;
+
+// RESPONSIVE BREAKPOINTS
+
+$xl: 90em; // 1440px
+$lg: 64em; // 1024px
+$med: 48em; // 768px
+$sm: 28em; // 448px
+$xs: 20em; // 320px
+
+// CONTAINER
+$containerWidth: 90rem;
+$widthLg: 70rem;
+$widthMed: 50rem;
+
+@media screen and (max-width: $lg) {
+  $containerWidth: 80rem;
+}
+@media screen and (max-width: $med) {
+  $containerWidth: 60rem;
+}
+@media screen and (max-width: $sm) {
+  $containerWidth: 50rem;
+}
+
+$widthSm: 35rem;

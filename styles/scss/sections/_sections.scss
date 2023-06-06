@@ -1,0 +1,20 @@
+.section {
+  & > * {
+    padding: 8rem 0;
+  }
+
+  &__about {
+    background-color: #eee;
+    min-height: 20rem;
+  }
+
+  &__learn {
+    background-image: linear-gradient(
+        rgba(141, 80, 42, 0.3),
+        rgba(141, 80, 42, 0.3)
+      ),
+      url(../../assets/img/learn-bg.png);
+    background-size: cover;
+    background-position: bottom;
+  }
+}
